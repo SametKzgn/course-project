@@ -1,0 +1,32 @@
+* 
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    
+body 
+    background-color: whitesmoke
+
+.sidebar 
+    position: fixed
+    left: 0
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px
+    top: 0
+    height: 100%
+    width: clamp(300px,16%,600px)
+    padding: 30px 0
+    .sidebar-inner 
+        h1
+            margin-left: 30px
+        .sidebar-links 
+            width: 100%
+            a 
+                padding: 10px 30px
+                text-decoration: none
+                color: black
+                transition: all 150ms ease-in-out
+                &:hover 
+                    color: black !important
+                    background-color: #e0e0e09d
+        .sidebar-links:hover 
+            a
+                color: gray

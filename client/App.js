@@ -63,16 +63,6 @@ const addStudent = () => {
   return (
     <div className="container">
     <Sidebar/>
-    <input type="text" placeholder="Student Name"  onChange={(e) => setStudentInfo({...studentInfo, name: e.target.value})}/>
-<input type="number" placeholder="Student Age"  onChange={(e) => setStudentInfo({...studentInfo, age: e.target.value})}/>
-<input type="number" placeholder="Student Class" onChange={(e) => setStudentInfo({...studentInfo, classId: e.target.value})}/>
-<button onClick={(e) => addStudent()}>Add Student</button>
-{students ? students.map((item,key) => (
-<div key={key} className="student">
-  <h1>{item.name}{item.id}</h1>
-  <button onClick={() => deleteFunc(item.id)}>SİL</button>
-</div>
-)) : "felflew"} 
     </div>
   );
 }

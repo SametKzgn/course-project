@@ -1,0 +1,45 @@
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.align-start {
+    align-items: flex-start;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.align-end {
+    align-items: flex-end;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-start {
+    justify-content: flex-start;
+}
+
+.justify-end {
+    justify-content: flex-end;
+}
+
+.g-10 {
+    gap: 10px;
+}
+
+
+
+.g-5 {
+    gap: 5px;
+}
+
+.mx-auto {
+    margin: 0 auto;
+}
