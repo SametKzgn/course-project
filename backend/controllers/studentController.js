@@ -84,11 +84,11 @@ const deleteAllStudent = async (req, res) => {
         });
 
         res.status(200).json({
-            message: 'Student deleted successfully'
+            message: 'Students deleted successfully'
         });
     } catch (err) {
         return res.status(500).json({
-            message: err.message || "Some error occurred while deleting the Student."
+            message: err.message || "Some error occurred while deleting the Students."
         });
     }
 }

@@ -1,12 +1,14 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react';
 import Sidebar from './components/Layouts/Sidebar';
+import { Routes, Route, Link } from "react-router-dom";
+import HomePage from './components/Layouts/HomePage';
+import Students from './components/Layouts/Students';
+import Courses from './components/Layouts/Courses';
+import Classes from './components/Layouts/Classes';
 
 
 function App() {
-
-
-
 
 const [students,setStudents] = useState();
 const [studentInfo,setStudentInfo] = useState(
@@ -63,16 +65,14 @@ const addStudent = () => {
   return (
     <div className="container">
     <Sidebar/>
-    <input type="text" placeholder="Student Name"  onChange={(e) => setStudentInfo({...studentInfo, name: e.target.value})}/>
-<input type="number" placeholder="Student Age"  onChange={(e) => setStudentInfo({...studentInfo, age: e.target.value})}/>
-<input type="number" placeholder="Student Class" onChange={(e) => setStudentInfo({...studentInfo, classId: e.target.value})}/>
-<button onClick={(e) => addStudent()}>Add Student</button>
-{students ? students.map((item,key) => (
-<div key={key} className="student">
-  <h1>{item.name}{item.id}</h1>
-  <button onClick={() => deleteFunc(item.id)}>SİL</button>
-</div>
-)) : "felflew"} 
+    <div className="content-wrapper">
+    <Routes>
+      <Route path="/" element={<HomePage/>}/>
+      <Route path="/students" element={<Students/>}/>
+      <Route path="/classes" element={<Classes/>}/>
+      <Route path="/courses" element={<Courses/>}/>
+    </Routes>
+    </div>
     </div>
   );
 }

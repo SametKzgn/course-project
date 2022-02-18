@@ -6,12 +6,19 @@
 body 
     background-color: whitesmoke
 
+
+
+.container 
+    max-height: 100vh
+    display: flex
+    align-items: center
+    justify-content: center
 .sidebar 
-    position: fixed
+    position: relative
     left: 0
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px
     top: 0
-    height: 100%
+    height: 100vh
     width: clamp(300px,16%,600px)
     padding: 30px 0
     .sidebar-inner 
@@ -30,3 +37,9 @@ body
         .sidebar-links:hover 
             a
                 color: gray
+
+.content-wrapper 
+    width: 100%
+    height: 100vh
+    overflow: auto
+    background-color: #dcdcdc

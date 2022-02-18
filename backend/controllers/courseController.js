@@ -42,8 +42,53 @@ const updateCourse = async (req, res) => {
   }
 };
 
+
+const deleteCourse = async (req, res) => {
+  try {
+      const student = await db.course.findOne({
+          where: {
+              id: req.params.id
+          }
+      });
+      if (!student) {
+          return res.status(404).json({
+              message: 'Course not found'
+          });
+      }
+
+      await student.destroy();
+      res.status(200).json({
+          message: 'Course deleted successfully'
+      });
+  } catch (err) {
+      return res.status(500).json({
+          message: err.message || "Some error occurred while deleting the Course."
+      });
+  }
+}
+
+
+const deleteAllCourse = async (req, res) => {
+  try {
+      await db.course.destroy({
+          where: {}
+      });
+
+      res.status(200).json({
+          message: 'Coursew deleted successfully'
+      });
+  } catch (err) {
+      return res.status(500).json({
+          message: err.message || "Some error occurred while deleting the Courses."
+      });
+  }
+}
+
+
 module.exports = {
   createCourse,
   getAllCourses,
-  updateCourse
+  updateCourse,
+  deleteCourse,
+  deleteAllCourse
 };
